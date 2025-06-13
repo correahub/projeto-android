@@ -1,0 +1,223 @@
+/*Código multibyte UTF8*/
+@charset "UTF-8";
+
+/*Fontes externas*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*Android*/
+@font-face {
+  font-family: "droid"; /*Esse aqui é o apelido da fonte externa*/
+  src: url(../fontes/idroid.otf) format(opentype); /*Esse é o caminho da fonte na pasta*/
+}
+
+/*Variaveis Globais*/
+:root {
+  /*Cor de fundo do body*/
+  --corbody: rgba(132, 225, 172, 0.699);
+  /*Paleta de cor e gradiantes*/
+  --cor0: white;
+  --cor1: rgb(60, 217, 131);
+  --cor2: rgb(46, 167, 100);
+  --cor3: rgb(32, 113, 68);
+  --cor4: rgb(26, 92, 56);
+  --gradiante: linear-gradient(var(--cor1), var(--cor2), var(--cor3));
+  /*Fonte das palavras dos pargrafos listas, etc..*/
+  --padrao: arial, verdana, helvetica, sans-serif;
+  /*FONTES DO H1*/
+  --fdoh1: "Bebas Neue", "Oswald", "Roboto", sans-serif;
+  /*Fonte dos h2 ao h4*/
+  --fontestitles: "droid", "Oswald", "Roboto", sans-serif;
+}
+/*CONFIGURAÇÕES GLOBAIS SEM MARGEM E PADDING*/
+* {
+  padding: 0px;
+  margin: 0px;
+}
+/*------------------------------------*/
+/*BODY*/
+body {
+  background-color: var(--corbody);
+}
+/*------------------------------------*/
+/*HEADER*/
+header {
+  height: 150px;
+  background-image: var(--gradiante);
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+header > h1 {
+  font-family: var(--fdoh1);
+  font-size: 3em;
+  padding-bottom: 10px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px black;
+}
+header > p {
+  font-family: var(--padrao);
+  max-width: 500px;
+  margin: auto;
+  text-shadow: 2px 1px 0px black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*------------------------------------*/
+/*NAV*/
+nav {
+  background-color: var(--cor3);
+  padding: 10px;
+  padding-top: 15px;
+  box-shadow: -15px 7px 12px -8px black;
+}
+nav > a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--padrao);
+  margin-right: 10px;
+}
+
+nav > a:hover {
+  background-color: white;
+  color: var(--cor3);
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 5px;
+}
+/*------------------------------------*/
+/*MAIN*/
+main {
+  min-height: 320px;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+}
+
+main > p {
+  font-family: var(--padrao);
+  line-height: 1.5;
+  text-align: justify;
+  padding: 15px;
+  text-indent: 5px;
+}
+/*------------------------------------*/
+/*ARTICLE*/
+article {
+  padding: 15px;
+}
+
+article > p > a {
+  background-color: var(--corbody);
+  padding: 2px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--cor4);
+}
+
+article > p > a:hover {
+  text-decoration: underline;
+}
+article > p > a::before {
+  content: "🔗";
+}
+article > h2,
+h3 {
+  background-image: linear-gradient(to right, var(--corbody), transparent);
+  font-family: var(--fontestitles);
+  color: var(--cor4);
+  padding: 3px;
+}
+
+article > p {
+  font-family: var(--padrao);
+  line-height: 1.5em;
+  text-align: justify;
+  text-indent: 5px;
+  padding: 10px;
+}
+
+article > img {
+  width: 100%;
+}
+
+.bugzin {
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+
+.moldura {
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+
+.moldura > iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*------------------------------------*/
+/*ASIDE*/
+aside {
+  background-color: var(--cor2);
+  border-radius: 10px 10px 0px 0px;
+  margin: 11px 25px 0px 25px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: -1px 1px 9px 1px black;
+}
+
+aside > p > a {
+  background-color: var(--corbody);
+  padding: 2px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--cor4);
+}
+
+aside > p > a:hover {
+  text-decoration: underline;
+}
+aside > p > a::before {
+  content: "🔗";
+}
+
+aside > h4 {
+  font-family: var(--fontestitles);
+  color: var(--cor0);
+  background-color: var(--cor4);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+}
+
+aside > p {
+  font-family: var(--padrao);
+  line-height: 1.5em;
+  text-align: justify;
+  text-indent: 5px;
+  padding: 10px;
+}
+
+aside > ul {
+  list-style-position: inside;
+  columns: 2;
+  list-style-type: "\2705\00a0\00a0";
+  padding: 10px;
+}
+/*------------------------------------*/
+/*FOTTER*/
+footer {
+  text-align: center;
+  color: white;
+  background-color: var(--cor3);
+  margin-top: 20px;
+  padding: 5px;
+}
+
+/*------------------------------------*/
